@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "GreenSpace - Strain Tracker",
   description: "Track your favorite marijuana strains with GreenSpace.",
   icons: {
-    icon: '/greenspacelogo.png',
+    icon: '/favicon.ico',
     apple: '/greenspacelogo.png',
   },
 };
