@@ -24,8 +24,6 @@ export default function Greenspace() {
   const [strains, setStrains] = useState<Strain[]>([]);
   const [favorites, setFavorites] = useState<Favorite[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredStrains, setFilteredStrains] = useState<Strain[]>([]);
-  const [loading, setLoading] = useState(true);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [showForm, setShowForm] = useState(false);
 
@@ -36,8 +34,6 @@ export default function Greenspace() {
         .then((res) => res.json())
         .then((data) => {
           setStrains(data.data);
-          setFilteredStrains(data.data);
-          setLoading(false);
         });
     }
   }, [status]);
@@ -52,12 +48,7 @@ export default function Greenspace() {
   }, [status]);
 
   // Filter strains based on search term
-  useEffect(() => {
-    const filtered = strains.filter((strain) =>
-      strain.strain_name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setFilteredStrains(filtered.slice(0, 10)); // Limit to 10 results
-  }, [searchTerm, strains]);
+  // (Remove filteredStrains state and effect if not used in rendering)
 
   const addFavorite = async (strain: Strain, consumptionType: string, dispensary: string) => {
     const response = await fetch("/api/favorites", {

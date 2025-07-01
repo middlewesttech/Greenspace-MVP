@@ -1,5 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
+interface PlaceResult {
+  name: string;
+  types?: string[];
+  [key: string]: any;
+}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "GET") {
     res.setHeader("Allow", ["GET"]);
@@ -36,7 +42,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     // Filter results to focus on dispensaries and cannabis-related businesses
-    const filteredResults = data.results?.filter((place: any) => {
+    const filteredResults = data.results?.filter((place: PlaceResult) => {
       const name = place.name.toLowerCase();
       const types = place.types || [];
       
