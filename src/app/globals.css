@@ -3,6 +3,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --green-primary: #16a34a;
+  --green-secondary: #22c55e;
+  --green-accent: #4ade80;
+  --green-light: #f0fdf4;
+  --green-dark: #15803d;
 }
 
 @theme inline {
@@ -16,11 +21,34 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --green-primary: #22c55e;
+    --green-secondary: #4ade80;
+    --green-accent: #86efac;
+    --green-light: #064e3b;
+    --green-dark: #16a34a;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #22c55e;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #16a34a;
 }
