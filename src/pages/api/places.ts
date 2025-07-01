@@ -3,7 +3,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 interface PlaceResult {
   name: string;
   types?: string[];
-  [key: string]: any;
+  [key: string]: string | string[] | undefined;
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {

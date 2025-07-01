@@ -20,10 +20,9 @@ interface Favorite {
 }
 
 export default function Greenspace() {
-  const { data: session, status } = useSession();
+  const { status } = useSession();
   const [strains, setStrains] = useState<Strain[]>([]);
   const [favorites, setFavorites] = useState<Favorite[]>([]);
-  const [searchTerm, setSearchTerm] = useState("");
   const [editingId, setEditingId] = useState<string | null>(null);
   const [showForm, setShowForm] = useState(false);
 
@@ -46,9 +45,6 @@ export default function Greenspace() {
         .then((data) => setFavorites(data));
     }
   }, [status]);
-
-  // Filter strains based on search term
-  // (Remove filteredStrains state and effect if not used in rendering)
 
   const addFavorite = async (strain: Strain, consumptionType: string, dispensary: string) => {
     const response = await fetch("/api/favorites", {
