@@ -61,7 +61,7 @@ export default function Home() {
           </div>
         ) : (
           <div className="grid gap-4 md:grid-cols-2">
-            {strains.map((strain) => (
+            {strains.map((strain: Strain) => (
               <div key={strain.id} className="bg-white rounded-lg shadow-sm border border-green-200 p-4 flex gap-4 items-start hover:shadow-md transition-shadow">
                 {strain.image_url && (
                   <img src={strain.image_url} alt={strain.strain_name} className="w-16 h-16 object-cover rounded-lg" />

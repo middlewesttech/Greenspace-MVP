@@ -1,9 +1,10 @@
 "use client";
 import { useSession, signOut } from "next-auth/react";
+import type { Session } from "next-auth";
 import { useEffect, useState } from "react";
 
 export default function Settings() {
-  const { data: session, status } = useSession();
+  const { data: session, status } = useSession() as { data: Session | null; status: "loading" | "authenticated" | "unauthenticated" };
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {

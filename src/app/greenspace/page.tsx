@@ -73,7 +73,7 @@ export default function Greenspace() {
   const deleteFavorite = async (id: string) => {
     const response = await fetch(`/api/favorites?id=${id}`, { method: "DELETE" });
     if (response.ok) {
-      setFavorites(favorites.filter((fav) => fav._id !== id));
+      setFavorites(favorites.filter((fav: Favorite) => fav._id !== id));
     }
   };
 
@@ -90,7 +90,7 @@ export default function Greenspace() {
       }),
     });
     if (response.ok) {
-      setFavorites(favorites.map((fav) => 
+      setFavorites(favorites.map((fav: Favorite) => 
         fav._id === id 
           ? { ...fav, strainId: strain.id, strainName: strain.strain_name, consumptionType, dispensary }
           : fav

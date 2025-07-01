@@ -59,7 +59,7 @@ export default function EditStrainForm({ strains, currentFavorite, onUpdateFavor
 
   // Filter strains based on search term
   useEffect(() => {
-    const filtered = strains.filter((strain) =>
+    const filtered = strains.filter((strain: Strain) =>
       strain.strain_name.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setFilteredStrains(filtered.slice(0, 10));
@@ -140,7 +140,7 @@ export default function EditStrainForm({ strains, currentFavorite, onUpdateFavor
           />
           {searchTerm && filteredStrains.length > 0 && (
             <div className="absolute z-20 w-full mt-1 bg-white border rounded-lg shadow-lg max-h-60 overflow-y-auto">
-              {filteredStrains.map((strain) => (
+              {filteredStrains.map((strain: Strain) => (
                 <div
                   key={strain.id}
                   className="p-3 hover:bg-gray-100 border-b last:border-b-0 flex items-center gap-3"
@@ -222,7 +222,7 @@ export default function EditStrainForm({ strains, currentFavorite, onUpdateFavor
           )}
           {showDispensaryResults && dispensaryResults.length > 0 && (
             <div className="absolute z-20 w-full mt-1 bg-white border rounded-lg shadow-lg max-h-60 overflow-y-auto">
-              {dispensaryResults.map((place) => (
+              {dispensaryResults.map((place: Place) => (
                 <div
                   key={place.place_id}
                   onClick={() => handleDispensarySelect(place)}
