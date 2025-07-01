@@ -122,8 +122,8 @@ export default function EditStrainForm({ strains, currentFavorite, onUpdateFavor
 
   return (
     <>
-      <div className="bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto border border-green-200">
-      <h3 className="text-xl font-semibold mb-4 text-green-800">Edit Favorite</h3>
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6 max-w-2xl mx-auto border border-green-200 dark:border-slate-600">
+      <h3 className="text-xl font-semibold mb-4 text-green-800 dark:text-green-400">Edit Favorite</h3>
       
       {/* Strain Selection */}
       <div className="mb-4">

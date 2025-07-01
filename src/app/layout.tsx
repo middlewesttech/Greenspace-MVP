@@ -32,15 +32,15 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Providers>
-          <nav className="flex gap-6 p-4 border-b border-green-200 bg-gradient-to-r from-green-50 to-emerald-50 items-center justify-between px-6">
+          <nav className="flex gap-6 p-4 border-b border-green-200 dark:border-slate-600 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-slate-800 dark:to-slate-700 items-center justify-between px-6">
             <div className="flex items-center gap-2">
               <img src="/greenspacelogo.png" alt="GreenSpace Logo" className="w-6 h-6" />
-              <span className="text-lg font-bold text-green-800">GreenSpace</span>
+              <span className="text-lg font-bold text-green-800 dark:text-green-400">GreenSpace</span>
             </div>
             <div className="flex gap-6">
-              <Link href="/" className="text-green-700 hover:text-green-900 transition-colors font-medium">Home</Link>
-              <Link href="/greenspace" className="text-green-700 hover:text-green-900 transition-colors font-medium">My Greenspace</Link>
-              <Link href="/settings" className="text-green-700 hover:text-green-900 transition-colors font-medium">Account Settings</Link>
+              <Link href="/" className="text-green-700 hover:text-green-900 dark:text-green-400 dark:hover:text-green-300 transition-colors font-medium">Home</Link>
+              <Link href="/greenspace" className="text-green-700 hover:text-green-900 dark:text-green-400 dark:hover:text-green-300 transition-colors font-medium">My Greenspace</Link>
+              <Link href="/settings" className="text-green-700 hover:text-green-900 dark:text-green-400 dark:hover:text-green-300 transition-colors font-medium">Account Settings</Link>
             </div>
           </nav>
           {children}

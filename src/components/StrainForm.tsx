@@ -107,12 +107,12 @@ export default function StrainForm({ strains, onAddFavorite, onCancel }: StrainF
 
   return (
     <>
-      <div className="bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto border border-green-200">
-        <h3 className="text-xl font-semibold mb-4 text-green-800">Add New Favorite</h3>
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-lg p-6 max-w-2xl mx-auto border border-green-200 dark:border-slate-600">
+        <h3 className="text-xl font-semibold mb-4 text-green-800 dark:text-green-400">Add New Favorite</h3>
         
         {/* Strain Selection */}
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             Strain *
           </label>
           <div className="relative">
@@ -121,7 +121,7 @@ export default function StrainForm({ strains, onAddFavorite, onCancel }: StrainF
               placeholder="Search for a strain..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              className="w-full p-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent bg-white dark:bg-slate-700 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400"
             />
             {searchTerm && filteredStrains.length > 0 && !selectedStrain && (
               <div className="absolute z-20 w-full mt-1 bg-white border rounded-lg shadow-lg max-h-60 overflow-y-auto">

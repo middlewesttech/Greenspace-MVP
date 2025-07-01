@@ -45,30 +45,30 @@ export default function Home() {
       <div className="text-center mb-8">
         <div className="flex items-center justify-center gap-2 mb-4">
           <img src="/greenspacelogo.png" alt="GreenSpace Logo" className="w-6 h-6" />
-          <h1 className="text-2xl font-bold text-green-800">Welcome to GreenSpace</h1>
+          <h1 className="text-2xl font-bold text-green-800 dark:text-green-400">Welcome to GreenSpace</h1>
         </div>
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
           Your personal cannabis strain tracker. Discover, save, and manage your favorite strains with detailed information and dispensary recommendations.
         </p>
       </div>
       
-      <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-6 mb-8">
-        <h2 className="text-2xl font-bold mb-4 text-green-800">Most Recently Added Strains</h2>
+      <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-slate-800 dark:to-slate-700 rounded-lg p-6 mb-8">
+        <h2 className="text-2xl font-bold mb-4 text-green-800 dark:text-green-400">Most Recently Added Strains</h2>
         {loading ? (
           <div className="flex items-center justify-center py-8">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-green-600"></div>
-            <span className="ml-3 text-green-700">Loading strains...</span>
+            <span className="ml-3 text-green-700 dark:text-green-400">Loading strains...</span>
           </div>
         ) : (
           <div className="grid gap-4 md:grid-cols-2">
             {strains.map((strain) => (
-              <div key={strain.id} className="bg-white rounded-lg shadow-sm border border-green-200 p-4 flex gap-4 items-start hover:shadow-md transition-shadow">
+              <div key={strain.id} className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-green-200 dark:border-slate-600 p-4 flex gap-4 items-start hover:shadow-md transition-shadow">
                 {strain.image_url && (
                   <img src={strain.image_url} alt={strain.strain_name} className="w-16 h-16 object-cover rounded-lg" />
                 )}
                 <div className="flex-1">
-                  <div className="font-semibold text-green-900">{strain.strain_name}</div>
-                  <div className="text-sm text-gray-600 mt-1 line-clamp-2">{strain.description}</div>
+                  <div className="font-semibold text-green-900 dark:text-green-400">{strain.strain_name}</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-300 mt-1 line-clamp-2">{strain.description}</div>
                 </div>
               </div>
             ))}
@@ -77,10 +77,10 @@ export default function Home() {
       </div>
       
       <div className="text-center">
-        <p className="text-gray-600 mb-4">Ready to start tracking your favorites?</p>
+        <p className="text-gray-600 dark:text-gray-300 mb-4">Ready to start tracking your favorites?</p>
         <a 
           href="/greenspace" 
-          className="inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-medium"
+          className="inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 dark:bg-green-700 dark:hover:bg-green-800 transition-colors font-medium"
         >
           <span>Go to My Greenspace</span>
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
