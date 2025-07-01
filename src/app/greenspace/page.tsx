@@ -1,23 +1,9 @@
 "use client";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
+import type { Strain, Favorite } from "@/types";
 import StrainForm from "../../components/StrainForm";
 import EditStrainForm from "../../components/EditStrainForm";
-
-interface Strain {
-  id: string;
-  strain_name: string;
-  description?: string;
-  image_url?: string;
-}
-
-interface Favorite {
-  _id: string;
-  strainId: string;
-  strainName: string;
-  consumptionType?: string;
-  dispensary?: string;
-}
 
 export default function Greenspace() {
   const { status } = useSession();

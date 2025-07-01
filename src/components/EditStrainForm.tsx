@@ -1,19 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-
-interface Strain {
-  id: string;
-  strain_name: string;
-  description?: string;
-  image_url?: string;
-}
-
-interface Place {
-  place_id: string;
-  name: string;
-  formatted_address: string;
-  rating?: number;
-}
+import type { Strain, Place } from "@/types";
 
 interface EditStrainFormProps {
   strains: Strain[];

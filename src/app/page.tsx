@@ -1,14 +1,7 @@
 "use client";
 import { useSession, signIn } from "next-auth/react";
 import { useEffect, useState } from "react";
-
-interface Strain {
-  id: string;
-  strain_name: string;
-  description?: string;
-  image_url?: string;
-  updated_at?: string;
-}
+import type { Strain } from "@/types";
 
 export default function Home() {
   const { status } = useSession();
