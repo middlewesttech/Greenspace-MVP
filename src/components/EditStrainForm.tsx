@@ -122,7 +122,7 @@ export default function EditStrainForm({ strains, currentFavorite, onUpdateFavor
 
   return (
     <>
-      <div className="bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto border border-green-200">
+      <div className="bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto border border-green-200 dark:border-green-700">
       <h3 className="text-xl font-semibold mb-4 text-green-800">Edit Favorite</h3>
       
       {/* Strain Selection */}
@@ -261,7 +261,7 @@ export default function EditStrainForm({ strains, currentFavorite, onUpdateFavor
     {/* Strain Info Popup */}
     {showStrainInfo && (
       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-        <div className="bg-white rounded-lg p-6 max-w-md w-full mx-4 max-h-[80vh] overflow-y-auto">
+        <div className="bg-white rounded-lg p-6 max-w-md w-full mx-4 max-h-[80vh] overflow-y-auto dark:border-green-700">
           <div className="flex justify-between items-start mb-4">
             <h3 className="text-xl font-semibold">{showStrainInfo.strain_name}</h3>
             <button

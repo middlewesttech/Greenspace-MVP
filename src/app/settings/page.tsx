@@ -46,7 +46,7 @@ export default function Settings() {
       
       <div className="space-y-6">
         {/* User Info */}
-        <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-6 border border-green-200">
+        <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900 dark:to-emerald-950 rounded-lg p-6 border border-green-200 dark:border-green-700">
           <h2 className="text-xl font-semibold mb-4 text-green-800">Account Information</h2>
           <div className="space-y-3">
             <div className="flex items-center gap-2">
@@ -65,7 +65,7 @@ export default function Settings() {
         </div>
 
         {/* Dark Mode Toggle */}
-        <div className="bg-white rounded-lg shadow-sm border border-green-200 p-6">
+        <div className="bg-white rounded-lg shadow-sm border border-green-200 dark:border-green-700 p-6">
           <h2 className="text-xl font-semibold mb-4 text-green-800">Appearance</h2>
           <div className="flex items-center justify-between">
             <div>
@@ -90,7 +90,7 @@ export default function Settings() {
         </div>
 
         {/* Sign Out */}
-        <div className="bg-white rounded-lg shadow-sm border border-green-200 p-6">
+        <div className="bg-white rounded-lg shadow-sm border border-green-200 dark:border-green-700 p-6">
           <h2 className="text-xl font-semibold mb-4 text-green-800">Account Actions</h2>
           <button
             onClick={() => signOut()}

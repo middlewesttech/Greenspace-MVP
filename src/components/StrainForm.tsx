@@ -107,7 +107,7 @@ export default function StrainForm({ strains, onAddFavorite, onCancel }: StrainF
 
   return (
     <>
-      <div className="bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto border border-green-200">
+      <div className="bg-white rounded-lg shadow-lg p-6 max-w-2xl mx-auto border border-green-200 dark:border-green-700">
         <h3 className="text-xl font-semibold mb-4 text-green-800">Add New Favorite</h3>
         
         {/* Strain Selection */}

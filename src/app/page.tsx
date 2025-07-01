@@ -52,7 +52,7 @@ export default function Home() {
         </p>
       </div>
       
-      <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-6 mb-8">
+      <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900 dark:to-emerald-950 rounded-lg p-6 mb-8">
         <h2 className="text-2xl font-bold mb-4 text-green-800">Most Recently Added Strains</h2>
         {loading ? (
           <div className="flex items-center justify-center py-8">

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import React from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Providers from "../components/Providers";
 import Link from "next/link";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,8 +33,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        {/* Load saved theme preference early to avoid FOUC */}
+        <Script id="theme-loader" strategy="beforeInteractive">
+          {`(function(){try{if(localStorage.getItem('darkMode')==='true'){document.documentElement.classList.add('dark');}}catch(e){}})();`}
+        </Script>
         <Providers>
-          <nav className="flex gap-6 p-4 border-b border-green-200 bg-gradient-to-r from-green-50 to-emerald-50 items-center justify-between px-6">
+          <nav className="flex gap-6 p-4 border-b border-green-200 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900 dark:to-emerald-950 dark:border-green-700 items-center justify-between px-6">
             <div className="flex items-center gap-2">
               <img src="/greenspacelogo.png" alt="GreenSpace Logo" className="w-6 h-6" />
               <span className="text-lg font-bold text-green-800">GreenSpace</span>

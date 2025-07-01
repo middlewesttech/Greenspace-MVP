@@ -52,3 +52,44 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #16a34a;
 }
+
+/* Dark mode variable overrides */
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --green-primary: #22c55e;
+  --green-secondary: #4ade80;
+  --green-accent: #86efac;
+  --green-light: #064e3b;
+  --green-dark: #16a34a;
+}
+
+/* Common element overrides when dark mode is active */
+.dark .bg-white {
+  background-color: #1f2937 !important; /* Tailwind gray-800 */
+}
+
+.dark .text-gray-600 {
+  color: #9ca3af !important; /* Tailwind gray-400 */
+}
+
+.dark .text-gray-700 {
+  color: #d1d5db !important; /* Tailwind gray-300 */
+}
+
+.dark .text-gray-900 {
+  color: #f3f4f6 !important; /* Tailwind gray-100 */
+}
+
+.dark .border-green-200 {
+  border-color: #166534 !important; /* Tailwind green-800 */
+}
+
+.dark .border-gray-300 {
+  border-color: #4b5563 !important; /* Tailwind gray-600 */
+}
+
+/* Gradient overrides */
+.dark .bg-gradient-to-r {
+  background-image: linear-gradient(to right, #064e3b, #065f46);
+}

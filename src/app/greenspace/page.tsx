@@ -113,7 +113,7 @@ export default function Greenspace() {
       </div>
       
       {/* Add New Favorite */}
-      <div className="mb-8 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-6">
+      <div className="mb-8 bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900 dark:to-emerald-950 rounded-lg p-6">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-xl font-semibold text-green-800">Add New Favorite</h2>
           <button
@@ -134,7 +134,7 @@ export default function Greenspace() {
       </div>
 
       {/* Current Favorites */}
-      <div className="bg-white rounded-lg shadow-sm border border-green-200 p-6">
+      <div className="bg-white rounded-lg shadow-sm border border-green-200 dark:border-green-700 p-6">
         <h2 className="text-xl font-semibold mb-4 text-green-800">My Favorites</h2>
         {favorites.length === 0 ? (
           <div className="text-center py-8">
