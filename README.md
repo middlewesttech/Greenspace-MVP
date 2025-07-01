@@ -1,63 +1,156 @@
-# Strain Tracker
+# 🌿 GreenSpace - Cannabis Strain Tracker
 
-A Next.js application for tracking marijuana strains with authentication and favorites management.
+A full-stack Next.js application for tracking and managing your favorite cannabis strains with a beautiful, modern UI.
 
-## Features
+## ✨ Features
 
-- **Authentication**: GitHub OAuth integration with NextAuth.js
-- **Strain Database**: Browse strains from the Cannlytics API
-- **Personal Greenspace**: Save and manage your favorite strains
-- **Enhanced Strain Details**: 
-  - Preferred consumption type (Flower, Cartridge, Edible, Wax, Oil, Other)
-  - Preferred dispensary search using Google Places API
-- **Dark Mode**: Toggle between light and dark themes
-- **MongoDB Backend**: Persistent storage for user data
+- **🔐 Authentication**: GitHub OAuth integration with NextAuth.js
+- **🌱 Strain Management**: Add, edit, and delete your favorite strains
+- **🔍 Strain Search**: Search through thousands of strains from the Cannlytics API
+- **📍 Dispensary Integration**: Google Places API integration for finding dispensaries
+- **🎨 Modern UI**: Beautiful green-themed interface with responsive design
+- **🌙 Dark Mode**: Toggle between light and dark themes
+- **📱 Responsive**: Works perfectly on desktop, tablet, and mobile
 
-## New Features
+## 🛠 Tech Stack
 
-### Enhanced Strain Management
-When adding or editing strains in your Greenspace, you can now specify:
+- **Frontend**: Next.js 15, React, TypeScript, Tailwind CSS
+- **Backend**: Next.js API Routes
+- **Database**: MongoDB with NextAuth adapter
+- **Authentication**: NextAuth.js with GitHub OAuth
+- **APIs**: Cannlytics API (strains), Google Places API (dispensaries)
+- **Deployment**: Vercel-ready
 
-1. **Preferred Consumption Type**: Choose from Flower, Cartridge, Edible, Wax, Oil, or Other
-2. **Preferred Dispensary**: Search for dispensaries using Google Places API integration
+## 🚀 Getting Started
 
-### Google Places Integration
-The app uses Google Places API to search for dispensaries and cannabis-related businesses. Results include:
-- Business name
-- Address
-- Rating (if available)
+### Prerequisites
 
-## Environment Variables
+- Node.js 18+ 
+- MongoDB database
+- GitHub OAuth app
+- Google Places API key
 
-Create a `.env.local` file with the following variables:
+### Installation
 
-```env
-GITHUB_ID=your_github_oauth_app_id
-GITHUB_SECRET=your_github_oauth_app_secret
-NEXTAUTH_SECRET=your_nextauth_secret
-NEXTAUTH_URL=http://localhost:3000
-MONGODB_URI=your_mongodb_connection_string
-GOOGLE_PLACES_API_KEY=your_google_places_api_key
-```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/greenspace.git
+   cd greenspace
+   ```
 
-## Getting Started
-
-1. Install dependencies:
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-2. Set up environment variables in `.env.local`
+3. **Set up environment variables**
+   Create a `.env.local` file with:
+   ```env
+   MONGODB_URI=your_mongodb_connection_string
+   NEXTAUTH_SECRET=your_nextauth_secret
+   GITHUB_ID=your_github_oauth_app_id
+   GITHUB_SECRET=your_github_oauth_app_secret
+   GOOGLE_PLACES_API_KEY=your_google_places_api_key
+   NEXTAUTH_URL=http://localhost:3000
+   ```
 
-3. Run the development server:
+4. **Run the development server**
    ```bash
    npm run dev
    ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+5. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
-## API Routes
+## 📁 Project Structure
 
-- `/api/auth/[...nextauth]` - NextAuth.js authentication
-- `/api/favorites` - CRUD operations for user favorites
-- `/api/places` - Google Places API integration for dispensary search
+```
+strain-tracker-next/
+├── src/
+│   ├── app/                 # Next.js App Router pages
+│   │   ├── greenspace/      # My Greenspace page
+│   │   ├── settings/        # Account settings page
+│   │   ├── layout.tsx       # Root layout with navigation
+│   │   └── page.tsx         # Homepage
+│   ├── components/          # React components
+│   │   ├── StrainForm.tsx   # Add new strain form
+│   │   ├── EditStrainForm.tsx # Edit strain form
+│   │   └── Providers.tsx    # Context providers
+│   ├── lib/                 # Utility functions
+│   │   └── mongodb.ts       # MongoDB connection
+│   └── pages/api/           # API routes
+│       ├── auth/            # NextAuth configuration
+│       ├── favorites.ts     # Favorites CRUD operations
+│       └── places.ts        # Google Places API
+├── public/                  # Static assets
+│   ├── greenspacelogo.png   # App logo
+│   └── favicon.ico          # Favicon
+└── package.json
+```
+
+## 🌐 Deployment
+
+### Deploy to Vercel
+
+1. **Push to GitHub**
+   ```bash
+   git push origin main
+   ```
+
+2. **Connect to Vercel**
+   - Go to [vercel.com](https://vercel.com)
+   - Import your GitHub repository
+   - Add environment variables in Vercel dashboard
+   - Deploy!
+
+### Environment Variables for Production
+
+Make sure to set these in your Vercel dashboard:
+- `MONGODB_URI`
+- `NEXTAUTH_SECRET`
+- `GITHUB_ID`
+- `GITHUB_SECRET`
+- `GOOGLE_PLACES_API_KEY`
+- `NEXTAUTH_URL` (your production URL)
+
+## 🎨 Features in Detail
+
+### Strain Management
+- Search through thousands of strains
+- View detailed strain information with images
+- Add personal notes and preferences
+- Set preferred consumption type (Flower, Cartridge, Edible, etc.)
+
+### Dispensary Integration
+- Search for dispensaries using Google Places API
+- Auto-complete suggestions after 3 characters
+- Store preferred dispensary with each strain
+
+### User Experience
+- Clean, modern green-themed design
+- Responsive layout for all devices
+- Smooth animations and transitions
+- Intuitive navigation
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [Cannlytics API](https://cannlytics.com/) for strain data
+- [Google Places API](https://developers.google.com/maps/documentation/places/web-service) for dispensary search
+- [NextAuth.js](https://next-auth.js.org/) for authentication
+- [Tailwind CSS](https://tailwindcss.com/) for styling
+
+---
+
+**Built with ❤️ and 🌿 by the GreenSpace team**
