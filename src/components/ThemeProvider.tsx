@@ -1,15 +1,22 @@
 "use client";
 import { createContext, useContext, useEffect, useState } from "react";
 
-const ThemeContext = createContext(undefined);
+type Theme = "light" | "dark";
 
-export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState("light");
+interface ThemeContextType {
+  theme: Theme;
+  toggleTheme: () => void;
+}
+
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
     // Load theme from localStorage on mount
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
+    const savedTheme = localStorage.getItem("theme") as Theme;
+    if (savedTheme && (savedTheme === "light" || savedTheme === "dark")) {
       setTheme(savedTheme);
       applyTheme(savedTheme);
     } else {
@@ -22,7 +29,7 @@ export function ThemeProvider({ children }) {
     }
   }, []);
 
-  const applyTheme = (newTheme) => {
+  const applyTheme = (newTheme: Theme) => {
     const root = document.documentElement;
     if (newTheme === "dark") {
       root.classList.add("dark");
